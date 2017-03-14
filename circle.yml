@@ -1,0 +1,9 @@
+test:
+    override:
+        - bundle exec rake test
+
+deployment:
+  push_to_server:
+    branch: staging
+    commands:
+      - rsync -avz _site/ circleci@89.97.56.9:/var/www/developers.italia.it/web/dtest
